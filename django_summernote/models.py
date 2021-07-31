@@ -9,7 +9,8 @@ class AbstractAttachment(models.Model):
     name = models.CharField(max_length=255, null=True, blank=True, help_text="Defaults to filename, if left blank")
     file = models.FileField(
         upload_to=get_attachment_upload_to(),
-        storage=get_attachment_storage()
+        storage=get_attachment_storage(),
+        max_length=255,
     )
     uploaded = models.DateTimeField(auto_now_add=True)
 
